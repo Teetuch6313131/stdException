@@ -9,7 +9,13 @@ class my_cin: public exception
     }
     
 }cinf;
-
+class zero: public exception
+{
+    virtual const char* what() const throw(){
+      return "STUPID!!! can't y is 0!!";
+    }
+    
+}zerof;
 int main () 
 {      int x,y;
         double d;
@@ -17,7 +23,12 @@ int main ()
             cout<<"Input 2 numbers:";
  	          cin>>x>>y;
               if(cin.fail()) throw cinf;
+              if(y==0)
+              {
+                throw zerof;
+              }
               d=(double) x/y;
+              
 	            cout<< "The result is "<<d<<endl;
               
             } 
